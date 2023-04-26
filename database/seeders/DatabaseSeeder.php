@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'userphp@example.com',
         ]);
         User::factory()->create([
-            'name' => 'ManagerwW User',
+            'name' => 'Manager User',
             'password' => Hash::make('password'),
             'status' => User::MANAGER,
             'email' => 'manager@example.com',
