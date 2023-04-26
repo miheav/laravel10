@@ -40,9 +40,9 @@ Route::get('/house', function () {
     return Inertia::render('House');
 })->middleware(['auth', 'verified'])->name('house');
 
-Route::get('/villages', function () {
-    return Inertia::render('Villages');
-})->middleware(['auth', 'verified'])->name('villages');
+Route::get('/village', function () {
+    return Inertia::render('Village');
+})->middleware(['auth', 'verified'])->name('village');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
