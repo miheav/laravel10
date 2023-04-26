@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
-class HouseFactory
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class HouseFactory extends Factory
 {
     public function definition(): array
     {

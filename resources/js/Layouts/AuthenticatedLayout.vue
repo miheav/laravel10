@@ -33,9 +33,8 @@ const showingNavigationDropdown = ref(false);
                                     Журнал
                                 </NavLink>
                             </div>
-                            <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <NavLink :href="route('houses')" :active="route().current('houses')">
+                                <NavLink :href="route('house')" :active="route().current('house')">
                                     Дома
                                 </NavLink>
                             </div>

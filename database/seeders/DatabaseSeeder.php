@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\House;
 use App\Models\User;
 use App\Models\Village;
 use Illuminate\Database\Seeder;
@@ -29,19 +30,19 @@ class DatabaseSeeder extends Seeder
         Village::factory()->count(50)
             ->create();
 
-        Hous::factory()->count(50)
+        House::factory()->count(50)
             ->create();
 
         User::factory()->create([
             'name' => 'Test User',
             'password' => Hash::make('password'),
-            'type' => User::USER,
-            'email' => 'userphp @example.com',
+            'status' => User::USER,
+            'email' => 'userphp@example.com',
         ]);
         User::factory()->create([
             'name' => 'Manager User',
             'password' => Hash::make('password'),
-            'type' => User::MANAGER,
+            'status' => User::MANAGER,
             'email' => 'manager@example.com',
         ]);
     }

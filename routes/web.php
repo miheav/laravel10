@@ -26,12 +26,19 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+
+    return Inertia::render('Dashboard', [
+        'canLogin' => Route::has('login'),
+        'canRegister' => Route::has('register'),
+        'laravelVersion' => Application::VERSION,
+        'phpVersion' => PHP_VERSION,
+    ]);
+
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/houses', function () {
-    return Inertia::render('Houses');
-})->middleware(['auth', 'verified'])->name('houses');
+Route::get('/house', function () {
+    return Inertia::render('House');
+})->middleware(['auth', 'verified'])->name('house');
 
 Route::get('/villages', function () {
     return Inertia::render('Villages');
