@@ -42,7 +42,7 @@ Route::get('/house', function () {
 
 
 Route::get('/VillageList', [\App\Http\Controllers\VillageController::class, 'villageList'])->middleware(['auth', 'verified'])->name('villageList');
-//Route::get('/VillageShow/{id}', [\App\Http\Controllers\VillageController::class, 'villageShow'])->middleware(['auth', 'verified'])->name('village');
+Route::get('/village/{id}', [\App\Http\Controllers\VillageController::class, 'village'])->middleware(['auth', 'verified'])->name('village');
 
 
 

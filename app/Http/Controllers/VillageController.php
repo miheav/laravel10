@@ -17,7 +17,7 @@ class VillageController extends Model
     {
         $villages = Village::orderBy('name')->paginate(15);
 
-        return Inertia::render('VillageL ist', [
+        return Inertia::render('VillageList', [
             'villages' => $villages
         ]);
     }
@@ -25,12 +25,12 @@ class VillageController extends Model
     /**
      * Display the user's profile form.
      */
-    public function showList($id): Response
+    public function village($id): Response
     {
-        $villages = Village::orderBy('name')->paginate(15);
+        $village = Village::find($id);
 
-        return Inertia::render('VillageShow', [
-            'villages' => $villages
+        return Inertia::render('VillageView', [
+            'village' => $village
         ]);
     }
 }

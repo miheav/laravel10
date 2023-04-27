@@ -17,9 +17,9 @@ import { Page } from 'v-page'
 
 
             <div v-for="(item) in $page.props.villages.data" class="bg-white overflow-hidden shadow-sm">
-                <inertia-link :href="route('village/'+item.id)">
-                    {{ item.name }}
-                </inertia-link>
+                <a :href="'village/'+item.id">
+                    {{ item.name }}</a>
+
 
                 <hr>
             </div>
