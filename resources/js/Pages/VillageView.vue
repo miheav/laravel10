@@ -14,17 +14,10 @@ import { Page } from 'v-page'
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
 
-                    <li v-for="item in $page.props.villages">
-                        {{ item.name }}
-                    </li>
-                </div>
+
+
             </div>
         </div>
-        <Page
-            :total-row="21"
-
-        />
     </AuthenticatedLayout>
 </template>
