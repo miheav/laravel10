@@ -44,7 +44,8 @@ Route::get('/house', function () {
 Route::get('/VillageList', [\App\Http\Controllers\VillageController::class, 'villageList'])->middleware(['auth', 'verified'])->name('villageList');
 Route::get('/village/{id}', [\App\Http\Controllers\VillageController::class, 'village'])->middleware(['auth', 'verified'])->name('village');
 
-
+Route::get('/HouseList', [\App\Http\Controllers\HouseController::class, 'HouseList'])->middleware(['auth', 'verified'])->name('houseList');
+Route::get('/house/{id}', [\App\Http\Controllers\HouseController::class, 'house'])->middleware(['auth', 'verified'])->name('house');
 
 
 Route::middleware('auth')->group(function () {

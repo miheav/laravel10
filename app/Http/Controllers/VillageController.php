@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
-class VillageController extends Model
+class VillageController extends Controller
 {
     /**
      * Display the user's profile form.

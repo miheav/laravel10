@@ -1,20 +1,38 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\House;
+
+use App\Models\Village;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
+use App\Models\House;
 
 class HouseController extends Controller
 {
     /**
      * Display the user's profile form.
      */
-    public function show(Request $request): Response
+    public function HouseList(Request $request): Response
     {
-        return view('user.index', [
-            'users' => DB::table('users')->paginate(15)
+
+        $villages = House::orderBy('name')->paginate(15);
+
+        return Inertia::render('HouseList', [
+            'villages' => $villages
+        ]);
+    }
+
+    /**
+     * Display the user's profile form.
+     */
+    public function House($id): Response
+    {
+        $village = House::find($id);
+
+        return Inertia::render('HouseView', [
+            'village' => $village
         ]);
     }
 }
